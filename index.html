@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emojAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo.png" alt="emojAI Logo" class="logo">
+        </div>
+        
+        <div class="api-config">
+            <div class="api-row">
+                <label for="api-url">LiteLLM URL:</label>
+                <input type="text" id="api-url" placeholder="https://your-litellm-instance.com" onchange="saveApiUrl()">
+            </div>
+            <div class="api-row">
+                <label for="api-key">API Key:</label>
+                <input type="password" id="api-key" placeholder="Enter your API key" onchange="saveApiKey()">
+                <button type="button" onclick="toggleApiKey()" class="toggle-btn">👁️</button>
+            </div>
+        </div>
+        
+
+        <div class="main-content">
+            <div class="input-section">
+                <label for="description">Describe your emoji:</label>
+                <input type="text" id="description" placeholder="e.g., happy cat, coffee cup, rocket ship">
+                <button onclick="generateFromText()">Generate Emoji</button>
+            </div>
+            
+            <div class="output-section">
+                <div id="text-output" class="emoji-display">Enter a description and click Generate to create your emoji</div>
+                <button id="download-text" onclick="downloadEmoji()" style="display: none;">Download Emoji</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
